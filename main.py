@@ -6591,6 +6591,6 @@ async def update_corrections_table(current_user = Depends(get_current_user)):
         logger.error(f"❌ Erreur mise à jour table corrections: {str(e)}")
         raise HTTPException(500, f"Erreur serveur: {str(e)}")
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+@app.get("/")
+def root():
+    return {"message": "Taalimu API is running 🚀"}
